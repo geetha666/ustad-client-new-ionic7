@@ -1,0 +1,7 @@
+{
+  "name": "ustad-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
