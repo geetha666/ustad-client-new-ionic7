@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Professional Status</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+    <div #map id="map">
+      <!--
+      <iframe src="http://ressio.github.io/lazy-load-xt/dist/loading.gif" width="1020" height="450" frameborder="0" top="50" style="border:0">
+      </iframe>
+      !-->
+    </div>
+    <ion-card>
+      <ion-card-content>
+        Time : <div class="time_remain">Time remaining</div>
+        <br>
+        Distance: <div class="distance_remain">Distance remaining</div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        Call Professional
+        <br>
+        <a href="tel:{{professional.phone}}" class="button button-positive">{{professional.phone}}</a>
+      </ion-card-content>
+    </ion-card>
+  <!--
+  <div class="spin" *ngIf="loading">
+    <ion-spinner name="dots"></ion-spinner>
+  </div> 
+  !-->    
+</ion-content>

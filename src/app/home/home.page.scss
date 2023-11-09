@@ -1,0 +1,83 @@
+.spin {
+left: 0;
+line-height: 200px;
+margin-top: -100px;
+position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    font-size: 20px;
+color:black;
+}
+ion-spinner {
+* {
+    stroke: blue;
+    width: 60px;
+    height: 60px;
+}
+
+&.spinner-circles circle,
+&.spinner-crescent circle,
+&.spinner-bubbles circle,
+&.spinner-dots circle {
+    fill: blue;
+}
+}
+
+.myButn {
+height: 100%;
+}
+
+.button_font {
+height:650%;
+width: 100%;
+font-size: 16px;
+border-radius: 1rem;
+overflow: hidden;
+}
+
+.card {
+background: #FFF;
+border-radius: 1rem;
+box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+
+.headr {
+word-wrap: break-word;
+}
+
+.center {
+text-align: center;
+}
+
+#new_map {
+height: 100% !important;
+width: 100% !important;
+top: 0;
+left: 0;
+position: absolute;
+background: transparent url("http://ressio.github.io/lazy-load-xt/dist/loading.gif") no-repeat center center;
+}
+
+.testHello { 
+position : absolute;
+width : 100%;
+bottom:0px;
+}
+
+.scroll-content {
+overflow-y: hidden;
+}
+
+ion-card {
+border-bottom: 3px solid blue;
+}
+
+.map-container {
+height: 100%;
+}
+
+.large {
+  width: 100px;
+  height: 100px;
+}

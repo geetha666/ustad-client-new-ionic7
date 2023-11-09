@@ -1,0 +1,28 @@
+#map_canvas {
+  height: 100%;
+}
+.testHello { 
+  position : absolute;
+  width : 100%;
+  bottom:0px;
+}
+
+.scroll-content {
+  overflow-y: hidden;
+}
+
+ion-card {
+  border-bottom: 3px solid blue;
+}
+
+.card {
+  background: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+.select-md {
+  padding: 13px 8px 13px 16px;
+  max-width: 380px;
+  background-color: #fafafa;
+  box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}

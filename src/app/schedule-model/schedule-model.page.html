@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ScheduleModelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="modal_content" padding>
+  <div *ngIf="!loadingSpin">
+    <ion-buttons right>
+      <button btn-sm color="dark" class="dimissClass" ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <h4 class="textPos">Post Job</h4>
+    <!--
+    <ion-row justify-content-center align-items-center style="height: 10%; flex-direction: row">
+      <button ion-button round color="secondary" [disabled]=" later" (click)="hire_now()">Hire Now</button>
+      <br>
+      <button ion-button round color="menuColor" [disabled]=""  (click)="scheduleIt()">Schedule the Job</button>
+    </ion-row>
+    !-->
+    <table class="buttons">
+      <tr>
+        <td>
+          <button ion-button round color="secondary" style="text-transform: none;" (click)="hire_now()" [disabled]="later">Hire Now</button>
+        </td><br>
+        <td>
+          <button ion-button round color="menuColor" style="text-transform: none;" (click)="later = !later">Schedule Job</button>
+        </td>
+      </tr>
+    </table>    
+    <div *ngIf="later">
+      <br>
+      <ion-item>
+        <ion-label>Start time</ion-label>
+        <ion-datetime displayFormat="H:mm A" pickerFormat="h mm A" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime displayFormat = "MMM DD YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+      <br>
+      <div style="text-align:center">
+        <button ion-button color="dark" style="text-transform: none;" (click)="submit_job()" round>Submit</button>
+      </div> 
+    </div>
+  </div>
+  <div class ="spin" *ngIf="loadingSpin">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</ion-content>

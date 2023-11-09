@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estimation Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="checkout-trip common-bg">
+  <h1 *ngIf="hasError">No Estimation available</h1>
+  <div *ngIf="!loader" class="trip-info card round">
+      <ion-grid padding>
+        <ion-row>
+          <ion-col width-66>
+            <h5 ion-text color="primary">{{ est.title }}</h5>
+            <div>
+              <span class="bold">{{ est.professional }}</span>
+              <br/>
+              <span ion-text color="dark">{{ est.totalhours }} Hours</span>
+            </div>
+            <div margin-top>
+              <span ion-text class="bold">Rate</span>
+              <br/><br>
+              <span ion-text>{{ est.rate }} per 1 hour</span>
+            </div>
+            <div margin-top>
+              <ion-icon name="checkmark" *ngIf="(est.status == 'accepted')" class="text-green"></ion-icon>
+              <ion-icon name="close" *ngIf="(est.status == 'rejected')" color="danger"></ion-icon>
+              <span ion-text *ngIf="(est.status == null)">Needs Approval</span>
+              <span ion-text *ngIf="(est.status != null)">{{est.status}}</span>
+            </div>
+          </ion-col>
+          <ion-col col-4>
+            <span ion-text>Total Amount</span>
+            <h5 ion-text color="primary" class="bold" no-margin>{{ est.amount }}</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div *ngIf="!loader">
+        <ion-row>
+            <ion-col style="text-align: center">
+                <button ion-button *ngIf="(est.status == null)" (click)="accept(est)" >Accept</button>
+                <button ion-button *ngIf="(est.status == null)" (click)="reject(est)" >Reject</button> 
+            </ion-col>
+          </ion-row>
+    </div>
+    
+  <div class ="spin" *ngIf="loader">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</ion-content>

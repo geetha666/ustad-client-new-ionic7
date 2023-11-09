@@ -1,0 +1,19 @@
+export class Professional {
+  id:number;
+  firstname:string;
+  lastname:string;
+  username:string;
+  email:string;
+  password:string;
+  phone:string;
+  cnic:string;
+  area_id:number;
+  category_id:number;
+  is_verified:string;
+  recent_quotation:string;
+  address:string;
+  latitude:number;
+  longitude:number;
+  current_latitude:number;
+  current_longitude:number;
+}

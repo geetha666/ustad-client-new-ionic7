@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Unassigned Jobs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <h5 *ngIf="hasError" text-center>No Unassigned Jobs available</h5>
+  
+  <div *ngIf="!networkfail && !hasError">
+      <ion-card *ngFor="let job of clientJob.slice().reverse()" class="card" (click)="jobDetail(job)">
+    <ion-card-header class="bold" style="font-size: 20px;color: blue;">
+        {{job.title}}
+    </ion-card-header>
+    <ion-card-content style="font-size: 18px;">
+      Job created against the category {{job.category}} at {{job.created_at}}. Our Professional will contact you shortly.
+      <br>
+    </ion-card-content>
+  </ion-card>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+</ion-content>

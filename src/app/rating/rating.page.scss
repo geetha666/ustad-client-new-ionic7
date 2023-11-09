@@ -1,0 +1,20 @@
+rating {
+  ion-icon {
+    color: gray;
+    size: 30px;
+
+    &.filled {
+      color: #ffb400;
+    }
+  }
+}
+
+.submitclass {
+  font-size:12px;
+  text-align: center;
+}
+
+.ratingerr {
+  text-indent: 19px;
+  color: red;
+}

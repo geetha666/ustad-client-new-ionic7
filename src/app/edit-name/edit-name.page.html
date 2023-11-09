@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Name</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="done()">
+        Done
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.firstname" [ngModelOptions]="{standalone: true}" required #firstname="ngModel"></ion-input>
+  </ion-item>
+  <ion-label class="registererr" [hidden]="!firstname.hasError('required')">Name is required</ion-label>
+</ion-content>

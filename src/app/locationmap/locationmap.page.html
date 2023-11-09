@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Select Location</ion-title>
+  </ion-toolbar>
+</ion-header>
+   
+<ion-content class="scroll-content">
+  <ion-card class="card">
+    <ion-card-header>
+      <b>Current Location</b>
+    </ion-card-header>
+    <ion-card-content class="locating" text-wrap>
+      {{current_location}}
+    </ion-card-content>
+  </ion-card>
+  <div id="map_canvas" scroll="false" data-tap-disabled="true"></div>
+  <div class="testHello ">
+    <!--
+    <ion-item>
+      <ion-label style="color:black">Select Category</ion-label>
+      <ion-select submitText="Done" cancelText="Cancel">
+        <ion-option value="" selected="true">None</ion-option>
+        <ion-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-row justify-content-center align-items-center style="height: 10%; flex-direction: row">
+      <button ion-button round color="secondary" [disabled]=" later" style="text-transform: none;">Hire Now</button>
+      <button ion-button round color="menuColor" [disabled]=""  (click)="scheduleIt()" style="text-transform: none;">Hire Later</button>
+    </ion-row>
+    !-->
+    <button ion-button round block color="menuColor" style="text-transform: none;">Confirm Your Location</button>
+  </div>
+  <!--
+  <div id="later_div" style="visibility:hidden">
+    <ion-list>
+      <ion-item>
+        <ion-label>Start time</ion-label>
+        <ion-datetime displayFormat="H:mm A" pickerFormat="h mm A" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime displayFormat = "MMM DD YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <button ion-button round block color="menuColor" [disabled] = " " (click)="hire_later()">Submit</button>
+  </div>
+  !-->
+</ion-content>

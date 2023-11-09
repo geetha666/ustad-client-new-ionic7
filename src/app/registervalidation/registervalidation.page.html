@@ -1,0 +1,52 @@
+<!--
+  Generated template for the RegistervalidationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Verification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="verificationForm">
+    <!--
+    <ion-title text-center>Verify Account</ion-title>
+    -->
+    <p style="font-size: 18px;" *ngIf="(phone_number != null)">Ustad online have sent SMS message on your phone number {{phone_number}} <a href="#" onclick="return false;" (click)="presentPhoneModal()">Change number</a></p>
+    <p style="font-size: 18px;" *ngIf="(phone_number == null)">You don't have any phone number. Please add phone number for Verification. <a href="#" onclick="return false;" (click)="presentPhoneModal()">Add number</a></p>
+      <ion-item [ngClass]="{'error-border':!verificationForm.controls.code.valid && verificationForm.controls.code.touched}">
+        <ion-label position="floating" style="font-size: 16px;">Enter Verification Code:</ion-label>
+        <ion-input type="number" formControlName="code"></ion-input>
+      </ion-item>
+      <span *ngIf="verificationForm.controls.code.hasError('required') && verificationForm.controls.code.touched">
+        <br>
+        <ion-label class="registererr">Please Enter the code!</ion-label>
+      </span>
+      <br>
+      <div text-center>
+        <ion-button style="--background:#26cb26;font-size: 18px;" [disabled]="!verificationForm.valid" (click)="verify(verificationForm.value.code)">Verify</ion-button>
+      </div>
+    <ion-list>
+      <ion-item>
+        <p tappable style="color: blue;font-size: 20px;" *ngIf="!codesent" (click)="resend()">Resend SMS!</p>
+        <p tappable *ngIf="codesent" style="font-size: 20px;">Resend SMS!</p>
+        <p style="float: right;" *ngIf="codesent">
+          <timer #timer [timeInSeconds]="60"></timer>
+        </p>
+      </ion-item>
+      <ion-item>
+        <p tappable style="color: blue;font-size: 20px" *ngIf="!codesent" (click)="resendCall()">Receive Code through Call</p>
+        <p tappable *ngIf="codesent" style="font-size: 20px;">Receive Code through Call</p>
+      </ion-item>
+      <ion-item>
+        <p tappable style="color: blue;font-size: 20px" (click)="logout()" >Sign Out</p>
+      </ion-item>
+    </ion-list>
+  </form>
+  <br>
+  <br>
+  
+</ion-content>

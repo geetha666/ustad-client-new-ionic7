@@ -1,0 +1,24 @@
+<!--
+  Generated template for the PaymentmodalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="modal_content" padding>
+  <div *ngIf="!loadingSpin">
+    <ion-buttons right>
+      <button btn-sm color="dark" class="dimissClass" ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <h4 class="textPos">Your Job has been completed!!</h4>
+    <h6>Job Cost:</h6>
+    <div class="num_style">{{job_cost}}</div>
+    <br>
+    <h6>Amount Due:</h6>
+    <div class="num_style">{{due_amount}}</div>
+  </div>
+  <div class ="spin" *ngIf="loadingSpin">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+</ion-content>

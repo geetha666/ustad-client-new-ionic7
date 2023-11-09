@@ -1,0 +1,106 @@
+<!--
+  Generated template for the CategoriesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--
+<ion-content padding>
+  <div *ngIf="!loading && !networkfail">
+    <h5 *ngIf="hasError" text-center>No Categories available</h5>
+    <ion-list>
+      <ion-card ion-item *ngFor="let category of categories" (click)="selectedItem(category)" class="card">
+        <ion-card-header>
+          {{category.name}}
+        </ion-card-header>
+        <ion-card-content text-wrap>
+          {{category.desc}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+  <div class="spin" *ngIf="loading">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+</ion-content>
+
+<ion-content overflow-scroll="true" class="has-header">
+  
+  <div *ngIf="!loading && !networkfail">
+    <h5 *ngIf="hasError" text-center>No Categories available</h5>
+    <ion-card *ngFor = "let category of categories" (click)="selectedItem(category)">
+      <img src="assets/imgs/{{category.name}}.jpg" onerror="this.src='assets/imgs/Default1.jpg'"/>
+      <div class="card-title">{{category.name}}</div>
+      <div class="card-subtitle">{{category.desc}}</div>
+    </ion-card>
+  </div>
+  <div class="spin" *ngIf="loading">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+  
+  <ion-card>
+    <ion-card-header>
+      Categories
+    </ion-card-header>
+  
+    <ion-list>
+      <button *ngFor="let category of categories; let i=index" ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/icons/{{category.name}}.jpg" onerror="this.src='assets/imgs/icons/teacher.jpg'">
+        </ion-avatar>
+        <ion-label>{{category.name}}</ion-label>
+        <ion-checkbox item-end [ngModel]="checkedIdx == i"(ngModelChange)="$event ? checkedIdx = i : checkedIdx = -1" [disabled]="checkedIdx >= 0 && checkedIdx != i" (ionChange)="onChange($event)"></ion-checkbox>
+      </button>
+  
+    </ion-list>
+  </ion-card>
+  <button ion-button [disabled]="toogleBool">Hire Now</button>
+  
+</ion-content>
+!-->
+
+<ion-content class="outer-content" #content>
+  <ion-list>
+    <ion-list-header style="font-size: 18px;">
+      Categories
+    </ion-list-header>
+  </ion-list>
+
+  <div class="row" *ngIf="!loading && !networkfail">
+    <div class="column" *ngFor="let category of categories">
+      <img src="assets/imgs/{{category.name}}.jpg"  onerror="this.src='assets/imgs/teacher.jpg'"  (click)="click_img(category.id)">
+    </div>
+  </div>
+
+  <div class="spin" *ngIf="loading">
+    <ion-spinner class="large" name="dots"></ion-spinner>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+
+<div id="ex1" class="modal_content">
+  <div class="circle">+</div><br>
+  <h2 text-center>Post your Job</h2><br>
+  <div style="text-align: center;">
+    <ion-button shape="round" size="large" color="primary" style="text-transform: none;" (click)="hire_now()">Hire Now</ion-button>
+  </div>
+</div>
+
+
+</ion-content>

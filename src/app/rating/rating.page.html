@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rate</ion-title>
+  </ion-toolbar>
+</ion-header>
+   
+<ion-content padding>
+  <br>
+  <ion-title text-center style="font-size:20px">Rate the Professional</ion-title>
+  <br>
+    <form [formGroup]="ratingForm">
+    <!--
+    <ion-item [ngClass]="{'error-border':!ratingForm.controls.feedback.valid && ratingForm.controls.feedback.touched}">
+      <ion-label>Feedback</ion-label>
+      <ion-select formControlName="feedback" required>
+        <ion-option value="Good">Good</ion-option>
+        <ion-option value="Excellent">Excellent</ion-option>
+        <ion-option value="Satisfied">Satisfied</ion-option>
+        <ion-option value="poor">Poor</ion-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="ratingForm.controls.feedback.hasError('required') && ratingForm.controls.feedback.touched">
+      <ion-label class="ratingerr">Feedback is required</ion-label>
+    </div>
+    !-->
+    <ion-item [ngClass]="{'error-border':!ratingForm.controls.rating.valid && ratingForm.controls.rating.touched}">
+      <ion-label for="rating" position="stacked" style="font-size: 20px;">Rating</ion-label><br>
+      <!--<ion-label floating>Select Rating</ion-label><br>!-->
+      <!--
+  <rating formControlName="rating"
+        readOnly="2" 
+        max="5" 
+        emptyStarIconName="star-outline" 
+        halfStarIconName="star-half" 
+        starIconName="star" 
+        nullable="false" 
+       >
+      </rating>
+      -->
+
+      <rating formControlName="rating"
+        readonly="false" 
+        size="default" >
+      </rating>
+    
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" style="font-size: 20px;">Description</ion-label>
+      <ion-textarea type="text" formControlName="description"></ion-textarea>
+    </ion-item>
+  <ion-row>
+    <ion-col style="text-align:center">
+      <ion-button [disabled]="!ratingForm.valid" (click)="submit()">Submit</ion-button>
+    </ion-col>
+  </ion-row>
+  </form>
+    <!--
+  <ion-button block (click)="submit()">Submit</ion-button>
+  !-->
+</ion-content>

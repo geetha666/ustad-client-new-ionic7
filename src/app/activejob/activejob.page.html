@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Active Job</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content padding>
+  <ion-card class="card round">
+    <ion-card-header style="font-size: 20px;color: blue;" *ngIf="(activejob.title != '')" class="bold">
+      {{activejob.title}}
+    </ion-card-header>
+    <ion-card-content style="font-size: 18px;">
+      <b>Status:</b> {{activejob.status}}
+      <br><br>
+      <b>Professional:</b> {{activejob.professional}}
+      <br><br>
+      Current Shift Time
+        <ion-button   expand="full" fill="clear" class="timer-button timer-text" >{{digitalTime}}</ion-button>
+      Total Time
+        <ion-button   expand="full" fill="clear" class="timer-button timer-text" >{{totalTime}}</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <!--
+  <ion-card>
+    <ion-label style="text-align:center">Current Shift Time</ion-label>
+    <ion-item class="no-bottom-border item">
+      <ion-button  size="large" expand="full" fill="clear" class="timer-button timer-text" >{{digitalTime}}</ion-button>
+    </ion-item>
+    <ion-label style="text-align:center">Total Time</ion-label>
+    <ion-item class="no-bottom-border item">
+      <ion-button  size="large" expand="full" fill="clear" class="timer-button timer-text" >{{totalTime}}</ion-button>
+    </ion-item>
+  </ion-card>
+  -->
+</ion-content>

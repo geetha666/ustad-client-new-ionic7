@@ -1,0 +1,116 @@
+<ion-content padding class="login auth-page">
+
+  <div class="auth-content">
+    <!-- Logo -->
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text>
+          <ion-text >Register</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+
+    <!-- Register form -->
+    <form [formGroup]="registerForm" >
+      <ion-item no-padding>
+        <ion-label position="stacked" style="font-size:20px">
+          <ion-icon name="mail" item-start></ion-icon>
+          Name
+        </ion-label>
+        <ion-input type="text" formControlName="firstname"></ion-input>
+      </ion-item>
+      <p ion-text *ngIf="registerForm.controls.firstname.hasError('required') && registerForm.controls.firstname.touched">
+        <ion-text color="danger">
+          Name is required
+        </ion-text>
+      </p>
+
+      <ion-item no-padding >
+        <ion-label position="stacked" style="font-size:20px">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      
+      <p ion-text color="danger" *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.touched">
+        <ion-text color="danger">
+          Password is required
+        </ion-text>
+      </p>
+
+      <p ion-text color="danger" *ngIf="registerForm.controls.password.hasError('minlength') && registerForm.controls.password.touched">
+        <ion-text color="danger">
+          Minimum password length is 8!
+        </ion-text>
+      </p>
+
+
+      <ion-item no-padding >
+        <ion-label position="stacked" style="font-size:20px">
+          <ion-icon name="call" item-start></ion-icon>
+          Phone (e.g 923001234567)
+        </ion-label>
+        <ion-input formControlName="phone" type="number"><span>92</span></ion-input>
+      </ion-item>
+
+      <p ion-text  *ngIf="registerForm.controls.phone.hasError('required') && registerForm.controls.phone.touched">
+        <ion-text color="danger">
+          Phone is required
+        </ion-text>
+      </p>
+
+      <p ion-text  *ngIf="registerForm.controls.phone.hasError('min') && registerForm.controls.phone.touched">
+        <ion-text color="danger">
+          Minimum phone length is 10!
+        </ion-text>
+      </p>
+
+      <p ion-text  *ngIf="registerForm.controls.phone.hasError('max') && registerForm.controls.phone.touched">
+        <ion-text color="danger">
+          Phone number maximum length exceeded!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding >
+        <ion-label position="stacked" style="font-size:20px">
+          <ion-icon name="locate" item-start></ion-icon>
+          Address
+        </ion-label>
+        <ion-input type="text" formControlName="address"></ion-input>
+      </ion-item>
+
+      <br>
+      <ion-item>
+        <ion-checkbox slot="start" formControlName="generalTerms" checked="false"></ion-checkbox>
+        <ion-label class="terms" tappable >Agree to the Terms and conditions</ion-label>
+      </ion-item>
+      <br>
+      <a href='#' onclick="return false" (click)="terms_conditions()" >view terms and conditions</a>
+      
+
+     
+    </form>
+
+    <div margin-top>
+      <ion-button icon-left size="medium" expand="full" shape="round" [disabled]="!registerForm.valid" (click)="create_account()" 
+        tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Sign Up
+      </ion-button>
+
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="goToLogin()" tappable>
+        <ion-text style="font-size: 20px;">
+          <strong>I have an account!</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>

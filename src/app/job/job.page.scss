@@ -1,0 +1,210 @@
+.cancelclass {
+  font-size:12px;
+  float: right;
+}
+.estclass {
+  font-size:12px;
+  float: right;
+}
+.rateclass {
+  font-size:12px;
+  float: right;
+}
+ul {
+  padding: 0px;
+
+  &.rating li {
+    padding: 5px 10px !important;
+    background: none;
+    color: #ffb400;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+/*
+ion-card {
+  position: relative;
+  text-align: center;
+}
+
+.card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color:black;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-style: zip($lists: italic);
+  //color:purple;
+  //color: #fff;
+}
+
+.card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  //color: #fff;
+}
+*/
+
+.headerstyle {
+  color: brown;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  // font-style: zip($lists: italic);
+  word-wrap: break-word;
+}
+
+.spin {
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  font-size: 20px;
+  color:black;
+}
+ion-spinner {
+  * {
+    stroke: blue;
+    width: 60px;
+    height: 60px;
+  }
+
+  &.spinner-circles circle,
+  &.spinner-crescent circle,
+  &.spinner-bubbles circle,
+  &.spinner-dots circle {
+    fill: blue;
+  }
+}
+
+.card {
+  background: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.loginerr {
+  text-indent: 19px;
+}
+
+.incrzfont {
+  font-size: 35px;
+}
+
+.incrz {
+  font-size: 35px;
+}
+
+.flex-row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  margin: 6px;
+  padding: 16px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  color: white;
+  box-sizing:border-box;
+}
+
+@media (max-width:767px) {
+  .flex-col {
+    flex-basis: calc(50% - 12px);
+  }
+}
+
+@media (max-width:460px) {
+  .flex-col {
+    flex-basis: 100%;
+  }
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;  
+}
+
+.container > .cell-row {
+  flex: 1;
+  display: flex;
+}
+.cell-row > div {
+  flex: 1;
+  flex-grow: 1;
+  color: #fff;
+  
+  /* Flex for these containers (cells) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container i[class^="ion-"] {
+  font-size: 90px;
+}
+
+
+
+
+
+/* doesn't matter */
+.bar-header {
+  background-color: #241D54 !important;
+  border-bottom: 0 !important;
+}
+.bar-header h1 {
+  color: #fff !important;
+  font-size: 20px !important;
+}
+
+.cell-row-1 {
+  background-color: #000;
+}
+.cell-row-2 {
+  background-color: #ccc;
+}
+.cell-row-3 {
+  background-color: #eee;
+}
+
+.cell-1 {
+  background-color: #C5DCFC;
+}
+.cell-2 {
+  background-color: #262B69;
+}
+.cell-3 {
+  background-color: #A0C5FA;
+}
+.cell-4 {
+  background-color: #B3D0FC;
+}
+.cell-5 {
+  background-color: #73A7F9;
+}
+.cell-6 {
+  background-color: #8CB9FA;
+}

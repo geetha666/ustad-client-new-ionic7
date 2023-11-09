@@ -1,0 +1,41 @@
+.card {
+  background: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+
+.spin {
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  font-size: 20px;
+  color:black;
+}
+
+ion-spinner {
+  * {
+    stroke: blue;
+    width: 60px;
+    height: 60px;
+  }
+
+  &.spinner-circles circle,
+  &.spinner-crescent circle,
+  &.spinner-bubbles circle,
+  &.spinner-dots circle {
+    fill: blue;
+  }
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.large {
+  width: 100px;
+  height: 100px;
+}

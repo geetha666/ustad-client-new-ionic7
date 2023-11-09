@@ -1,0 +1,39 @@
+.registererr {
+  text-indent: 19px;
+  color: red;
+}
+
+.lable {
+  background-color: #dedede;
+  width: 50%;
+  padding: 15px;
+  border: 1px solid #FF0000;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.snehainput {
+  background-color: #dedede;
+  border-left: 1px solid #000000;
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  padding: 2px 5px;
+  color: #666666;
+  outline: none;
+}
+
+.paz {
+  position: relative;
+  z-index: 10;
+}
+
+ion-content {
+  --background: url('../../assets/imgs/bg.jpg') 0 0/100% 100% no-repeat;
+}
+
+.terms {
+  white-space: normal;
+  color:blue;
+}

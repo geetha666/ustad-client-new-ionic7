@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Change Phone number</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [disabled]="!phoneForm.valid" (click)="updatePhone()">
+        Done
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="phoneForm">
+    <ion-item [ngClass]="{'error-border':!phoneForm.controls.phone.valid && phoneForm.controls.phone.touched}">
+      <ion-label style="font-size:15px" position="stacked">Phone (e.g 923001234567)</ion-label>
+      <ion-input formControlName="phone" type="number"><span>92</span></ion-input>
+    </ion-item>
+    <div class="registererr" *ngIf="phoneForm.controls.phone.hasError('required') && phoneForm.controls.phone.touched">
+      Phone is required!
+    </div>
+    <div class="registererr" *ngIf="phoneForm.controls.phone.hasError('min') && phoneForm.controls.phone.touched">
+      Minimum phone length is 10!
+    </div>
+    <div class="registererr" *ngIf="phoneForm.controls.phone.hasError('max') && phoneForm.controls.phone.touched">
+      Maximum phone length exceeded!
+    </div>
+  </form>
+</ion-content>

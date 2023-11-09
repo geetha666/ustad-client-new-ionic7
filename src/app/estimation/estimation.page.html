@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estimations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h5 *ngIf="hasError" text-center>No Estimation available</h5>
+  <ion-list>
+    <ion-card ion-item *ngFor="let est of estimation" class="card" (click)="estDetail(est)">
+      <ion-card-header>
+        {{est.professional}}
+      </ion-card-header>
+      <ion-card-content>
+        Amount: {{est.amount}}
+        <br>
+        Total Hours: {{est.totalhours}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

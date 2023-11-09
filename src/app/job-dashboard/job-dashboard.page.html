@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Job Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!loading && !nojob && !networkfail">
+    <h5 text-center>Your currently active Jobs</h5>
+    <ion-card *ngFor="let job of progressJob.slice().reverse()" class="card round" (click)="jobview(job)">
+      <ion-card-header style="font-size: 20px;color: blue;" class="bold">
+        {{job.title}}
+      </ion-card-header>
+      <ion-card-content style="font-size: 18px;">
+      Professional: {{job.professional}}<br><br>
+      Status: {{job.status}}<br><br>
+      Assigned on {{job.assign_date}}
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let job of newJob.slice().reverse()" class="card round" (click)="jobDetail(job)">
+      <ion-card-header style="font-size: 20px;color: blue;" class="bold">
+        {{job.title}}
+        <p style="float: right;color: blue;" ion-text ><strong>{{job.status}}</strong></p>
+      </ion-card-header>
+      <ion-card-content style="font-size: 18px;">
+      Our Professional will contact you shortly.
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let job of assignJob.slice().reverse()" class="card round" (click)="jobDetail(job)">
+      <ion-card-header style="font-size: 20px;color: blue;" class="bold">
+        {{job.title}}
+        <p style="float: right;color: blue;" ion-text ><strong>{{job.status}}</strong></p>
+      </ion-card-header>
+      <ion-card-content style="font-size: 18px;">
+        Job has been assigned to the Professional {{job.professional}}. Our Professional will contact you shortly.
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let job of ratingPending.slice().reverse()" class="card round" (click)="route_to_rating(job)">
+      <ion-card-header style="font-size: 20px;color: blue;" class="bold">
+        {{job.title}}
+        <p style="float: right;color: blue;" ion-text ><strong>{{job.status}}</strong></p>
+      </ion-card-header>
+      <ion-card-content style="font-size: 18px;">
+        Please rate professional performance
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="spin" *ngIf="loading">
+    <ion-spinner class="large" name="dots"></ion-spinner>
+  </div>
+  <div class="spin" *ngIf="!loading && !networkfail && progressjobErr && newjobErr && assignjobErr && ratingjobErr">
+    <b>No jobs in progress</b>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+</ion-content>

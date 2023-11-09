@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ProfessionalDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Professional Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h5 *ngIf="hasError">Professional Not found</h5>
+  <div *ngIf="!networkfail && !hasError">
+    <h5 ion-text>Personal Detail</h5>
+    <div class="card round" margin-top>
+      <div class="border-bottom" padding>
+        <p ion-text color="menuColor" class="bold">{{professional.firstname}} {{professional.lastname}}</p>
+      </div>
+      <div *ngIf="(professional.phone != null)" class="border-bottom" padding>
+        <span ion-text color="primary" class="bold">Phone</span><br><br>
+        <a href="tel:{{professional.phone}}" class="button button-positive">{{professional.phone}}</a>
+      </div>
+      <div *ngIf="(professional.email != null)" class="border-bottom" padding>
+        <span ion-text color="primary" class="bold">Email</span><br><br>
+        <p ion-text>{{professional.email}}</p>
+      </div>
+      <div *ngIf="(professional.cnic != null)" class="border-bottom" padding>
+        <span ion-text color="primary" class="bold">CNIC</span><br><br>
+        <p ion-text>{{professional.cnic}}</p>
+      </div>
+    </div>
+    <h5 ion-text>Address Detail</h5>
+    <div class="card round" margin-top>
+      <div class="border-bottom" padding>
+        <p ion-text color="menuColor" class="bold">Address</p>
+      </div>
+      <div *ngIf="(professional.name != null)" class="border-bottom" padding>
+        <p ion-text>{{professional.name}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+</ion-content>

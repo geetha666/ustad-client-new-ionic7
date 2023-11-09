@@ -1,0 +1,46 @@
+<!--
+  Generated template for the CreateJobPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post a Job</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <br><br><br>
+  <ion-title text-center style="font-size:25px">{{category_data.name}}</ion-title>
+  <br>
+  <h5 style="color:#4c6df9">Location Details</h5>
+  <ion-label class="loctrack" text-wrap>{{current_location}}</ion-label>
+  <div style="display: flex; justify-content: center;">
+    <button ion-button round color="menuColor" block class="other_location" (click)="loadMap()" >Choose From Map</button>
+  </div>
+  <br>
+  <h5 style="color:#4c6df9">When do you want to hire the Professional?</h5>
+  <ion-row justify-content-center align-items-center style="height: 10%; flex-direction: row">
+    <button ion-button round block color="secondary" [disabled]=" later" (click)="hire_now()">Hire Now</button>
+    <br>
+    <button ion-button round block color="menuColor" [disabled]=""  (click)="scheduleIt()">Schedule the Job</button>
+  </ion-row>
+  <br><br><br>
+  <div id="later_div" style="visibility:hidden">
+    <ion-list>
+      <ion-item>
+        <ion-label>Start time</ion-label>
+        <ion-datetime displayFormat="H:mm A" pickerFormat="h mm A" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime displayFormat = "MMM DD YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <button ion-button round block color="menuColor" [disabled] = " " (click)="hire_later()">Submit</button>
+  </div>
+</ion-content>

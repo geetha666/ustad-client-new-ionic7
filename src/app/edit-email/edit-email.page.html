@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Email</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="done()">
+        Done
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email" email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [ngModelOptions]="{standalone: true}" required #email="ngModel"></ion-input>
+  </ion-item>
+  <div class="md-errors-spacer" [hidden]="email.valid || email.untouched" class="alert alert-danger">
+    <div style="color:red"  *ngIf="email.errors && email.errors.pattern">
+      Email is invalid
+    </div>
+  </div>
+  <div style="color:red" [hidden]="!email.hasError('required')" class="alert alert-danger"><br>Email is required</div>
+</ion-content>

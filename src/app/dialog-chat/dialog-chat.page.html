@@ -1,0 +1,46 @@
+<!--
+  Generated template for the DialogChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      DialogChat
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div class="chats">
+        <div class="chatbox">
+          <div *ngFor="let chat of chats">
+            <div class="message sent" *ngIf="chat.type!=='machine' && chat.type == 'human'">
+              {{chat.message}}
+              <span class="metadata">
+              </span>
+            </div>
+            <div class="message received" *ngIf="chat.type =='machine'" tappable>
+              {{chat.message}}
+              <br>
+              <span class="metadata">
+              </span>
+              <ion-icon (click)="playMessage(chat.message)" name="volume-up" ></ion-icon>
+            </div>
+          </div>
+        </div>
+        </div>
+  <ion-footer>
+    <p text-center *ngIf="sending">sending...</p>
+    <div class="flex-items" padding>  
+      <ion-input [(ngModel)]="message" name="message" (keyup.enter)="sendMessage()" class="input_message" placeholder="send message ..."></ion-input>
+      <ion-icon (click)="sendMessage()" class="send icon_style" name="send"></ion-icon>
+      <ion-icon (click)="startRecording()" name="mic" class="send icon_style"></ion-icon>
+    </div>
+  </ion-footer>
+</ion-content>

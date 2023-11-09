@@ -1,0 +1,110 @@
+.headerstyle {
+  color: blue;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  // font-style: zip($lists: italic);
+}
+
+.successstyle {
+  color: green;
+  font-size: 20px;
+}
+
+.errorstyle {
+  color: rgb(146, 5, 5);
+  font-size: 20px;
+}
+
+.block {
+  position: relative;
+}
+
+ion-icon {
+  font-size: 40px;
+}
+
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+}
+.video-thumbnail img {
+  width: 100px;
+  height: 100px;
+}
+.video-thumbnail ion-icon {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 5px);
+}
+
+.common-bg {
+  background-color: #FAFBFC;
+}
+
+.card {
+  background: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 0 1px rgba(86, 61, 124, 0.2), 0 2px 4px rgba(86, 61, 124, 0.15);
+}
+
+.round {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(86, 61, 124, 0.1);
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.spin {
+  left: 0;
+  line-height: 200px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  font-size: 20px;
+  color:black;
+}
+
+ion-spinner {
+  * {
+    stroke: blue;
+    width: 60px;
+    height: 60px;
+  }
+
+  &.spinner-circles circle,
+  &.spinner-crescent circle,
+  &.spinner-bubbles circle,
+  &.spinner-dots circle {
+    fill: blue;
+  }
+}
+
+.rateclass {
+  font-size:12px;
+  float: right;
+}
+
+ul {
+  padding: 0px;
+
+  &.rating li {
+    padding: 5px 10px !important;
+    background: none;
+    color: #ffb400;
+
+    ion-icon {
+      font-size: 30px;
+    }
+  }
+}
+
+.ion-md-star {
+  color: #ffb400;
+}

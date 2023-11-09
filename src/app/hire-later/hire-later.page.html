@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="ion-edit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  
+      <div align="center">
+          
+        <h1>Your Personal info</h1>
+        <!--<img class="profile-image" src="assets/imgs/profile.jpg" (click)="updatePic()"> !-->
+          <h4>{{user.username}}</h4>
+          <h5>{{user.email}}</h5>
+      </div>
+      
+        <ion-item>
+          <ion-label>First Name</ion-label>
+          <ion-input type="text" [(ngModel)]="user.firstname"  [ngModelOptions]="{standalone: true}" required #firstname="ngModel" [disabled]="disable"></ion-input>
+        </ion-item>
+        <div [hidden]="!firstname.hasError('required')" class="alert alert-danger"><br>First name is required</div>
+        <br>
+        <ion-item>
+          <ion-label>Last Name</ion-label>
+          <ion-input type="text" [(ngModel)]="user.lastname"  [ngModelOptions]="{standalone: true}" required #lastname="ngModel" [disabled]="disable"></ion-input>
+        </ion-item>
+        <div [hidden]="!lastname.hasError('required')" class="alert alert-danger"><br>Last name is required</div>
+        <br>
+        <ion-item>
+          <ion-label>User Name</ion-label>
+          <ion-input type="text" [(ngModel)]="user.username"  [ngModelOptions]="{standalone: true}" required #username="ngModel" [disabled]="disable"></ion-input>
+        </ion-item>
+        <div [hidden]="!username.hasError('required')" class="alert alert-danger"><br>Username is required</div>
+        <br>
+        <ion-item>
+          <ion-label>Phone</ion-label>
+          <ion-input type="text" [(ngModel)]="user.phone"  [ngModelOptions]="{standalone: true}" required #phone="ngModel"  [disabled]="disable"></ion-input>
+        </ion-item>
+        <div [hidden]="!phone.hasError('required')" class="alert alert-danger"><br>Phone is required</div>
+        <br>
+        <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="user.email"  [ngModelOptions]="{standalone: true}" required [disabled]="disable" #email="ngModel"></ion-input>
+        </ion-item>
+        <div [hidden]="!email.hasError('required')" class="alert alert-danger"><br>Email is required</div>
+        <br>
+        <ion-item>
+          <ion-label>Balance</ion-label>
+          <ion-input type="text" [(ngModel)]="user.balance"  [ngModelOptions]="{standalone: true}" required disabled></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>Address</ion-label>
+          <ion-input type="text" [(ngModel)]="user.address"  [ngModelOptions]="{standalone: true}" required [disabled]="disable"></ion-input>
+        </ion-item>
+      <br>
+    <button color="danger"  ion-button block (click)="disable = !disable">Edit</button>
+    <button color="secondary"  ion-button block (click)="save(user)">Update</button>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Phone number</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="done()">
+        Done
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label style="font-size:15px" position="stacked">Phone(e.g 923001234567)</ion-label>
+    <ion-input type="text" [(ngModel)]="user.phone" pattern="[0-9]*" minlength="10" maxlength="12" [ngModelOptions]="{standalone: true}" (ionChange)="onChangePhone()" required #phone="ngModel"></ion-input>
+  </ion-item>
+  <div class="registererr" *ngIf="prefixError" text-wrap>Kindly include country code before number</div><br>
+  <div class="registererr" [hidden]="!phone.hasError('required')">Mobile number is required</div>
+  <div class="registererr" [hidden]="!phone.hasError('pattern')">Mobile number should be only numbers</div>
+  <div class="registererr" [hidden]="!phone.hasError('minlength')">Please include atleast 10 digits</div>
+  <div class="registererr" [hidden]="!phone.hasError('maxlength')">Phone number maximum length exceeded</div>
+</ion-content>

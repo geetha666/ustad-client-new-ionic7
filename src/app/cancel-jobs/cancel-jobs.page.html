@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cancelled Jobs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5 *ngIf="hasError" text-center>No Cancelled Jobs available</h5>
+  <div *ngIf="!hasError && !loading && !networkfail">
+    <ion-card class="card" *ngFor="let c_job of cancelledJobs.slice().reverse()" (click)="job_history(c_job)">
+      <ion-card-header class="bold" style="font-size: 20px;color: blue;">
+        {{c_job.title}}
+      </ion-card-header>
+      <ion-card-content style="font-size: 15px;">
+        Category : {{c_job.category}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="spin" *ngIf="loading">
+    <ion-spinner class="large" name="dots"></ion-spinner>
+  </div>
+  <div class="spin" *ngIf="networkfail">
+    <b>No internet connection</b>
+  </div>
+</ion-content>

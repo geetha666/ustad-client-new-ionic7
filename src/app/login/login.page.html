@@ -1,0 +1,105 @@
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="theme-bg"></div>
+  <div class="auth-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      
+      <h4 no-margin>
+        <ion-text class="fw700">
+          Ustad Online
+        </ion-text>
+      </h4>
+    </div>
+
+    <!-- Login form -->
+    <form [formGroup]="authForm" >
+      <ion-item no-padding >
+        <ion-label position="stacked" style="font-size: 20px;">
+          <ion-icon name="call" item-start></ion-icon>
+          Phone
+        </ion-label>
+        <ion-input formControlName="phone" autocapitalize="off" type="number"><span>92</span></ion-input>
+      </ion-item>
+
+      <p ion-text color="danger" *ngIf="authForm.controls.phone.hasError('required') && authForm.controls.phone.touched">
+        <ion-text color="danger">
+          Required Field
+        </ion-text>
+      </p>
+
+      <p ion-text color="danger" *ngIf="authForm.controls.phone.hasError('min') && authForm.controls.phone.touched">
+        <ion-text color="danger">
+          Minimum phone length is 10!
+        </ion-text>
+      </p>
+
+      <p ion-text color="danger" *ngIf="authForm.controls.phone.hasError('max') && authForm.controls.phone.touched">
+        <ion-text color="danger">
+          Phone number maximum length exceeded!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding >
+        <ion-label position="stacked" style="font-size: 20px;">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input formControlName="password" type="password" [(ngModel)]="loguser.password" (keyup.enter)="login()"></ion-input>
+      </ion-item>
+      <p ion-text color="danger"  *ngIf="authForm.controls.password.hasError('required') && authForm.controls.password.touched">
+        <ion-text color="danger">
+          Required Field
+        </ion-text>
+        </p>
+    </form>
+
+    <div>
+      <br>
+      <ion-button icon-left size="medium" expand="full" shape="round" (click)="login()" [disabled]="!authForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Sign in
+      </ion-button>
+
+      <p text-center>
+        <ion-text style="font-size: 20px;">
+          Or Sign in with:
+        </ion-text>
+      </p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="6">
+            <ion-button shape="round" style="--background:#3b5998" expand="full" (click)="doFbLogin()">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+         
+          <ion-col size="6">
+            <ion-button shape="round" style="--background:red" expand="full" (click)="googleLogin()">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="signup()" class="paz" tappable>
+        <ion-text style="font-size: 20px;">
+          New User? <strong>Sign Up</strong>
+        </ion-text>
+      </span>
+    </div>
+
+    <br>
+    <ion-button icon-left size="medium" expand="full" shape="round" (click)="signup()" tappable>
+      <ion-icon name="log-in"></ion-icon>
+      Sign up
+    </ion-button>
+
+  </div>
+</ion-content>
