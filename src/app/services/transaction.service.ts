@@ -9,7 +9,7 @@ import { Transaction } from '../transaction/transaction-instance';
 })
 export class TransactionService {
 
-  transaction: Transaction = new Transaction;
+  transaction: any = {} as Transaction;
 
   constructor(private http: HttpClient, private app_service: AppService) { }
 

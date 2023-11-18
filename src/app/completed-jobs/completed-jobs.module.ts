@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { IonicRatingModule } from "ionic4-rating";
 
 import { CompletedJobsPage } from './completed-jobs.page';
+import { StarRatingModule } from 'angular-star-rating';
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    IonicRatingModule,
+    StarRatingModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   declarations: [CompletedJobsPage]

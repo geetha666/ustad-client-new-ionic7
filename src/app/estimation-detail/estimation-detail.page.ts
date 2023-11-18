@@ -12,8 +12,8 @@ import { AcceptEst } from './estimation_detail_instance';
 })
 export class EstimationDetailPage {
 
-  est: Estimation = new Estimation;
-  acceptest: AcceptEst = new AcceptEst;
+  est: any = {} as Estimation;
+  acceptest: any = {} as AcceptEst;
   public hasError = false;
   public canAccept = false;
   loading:any;

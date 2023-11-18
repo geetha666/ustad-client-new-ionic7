@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./estimation.page.scss'],
 })
 export class EstimationPage {
-  estimation :Estimation[] = [];
+  estimation :any={} as Estimation;
   job_id:any;
   public hasError = false;
 

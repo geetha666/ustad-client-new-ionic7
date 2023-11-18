@@ -13,7 +13,7 @@ import { ProfessionalService } from '../services/professional.service';
 })
 export class NotificationsPage {
 
-  notification: Notification[] = [];
+  notification:any={} as Notification ;
   loadingSpin:any;
   public hasError = false;
   public networkfail = false;

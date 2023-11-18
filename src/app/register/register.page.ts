@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController, LoadingController, ToastController, MenuController } from '@ionic/angular';
+import { NavController, AlertController, LoadingController, ToastController, MenuController, Platform } from '@ionic/angular';
 import { User } from '../login/login_instance';
 import { AuthGuardService } from '../services/auth-guard.service';
 import { AppService } from '../services/app.service';
@@ -13,14 +13,14 @@ import { FCM } from '@ionic-native/fcm/ngx';
 })
 export class RegisterPage implements OnInit {
 
-  registerForm: FormGroup;
-  user: User= new User;
+  registerForm:any= FormGroup;
+  user: any= {} as  User;
   loader:any;
   con_err:string = "Ohh";
   public prefixError = false;
   public invalid_cnic = false;
   
-  constructor(private auth_service:AuthGuardService, public app_service: AppService, public navCtrl: NavController
+  constructor(private platform: Platform,private auth_service:AuthGuardService, public app_service: AppService, public navCtrl: NavController
   ,public formBuilder: FormBuilder, private alertCtrl: AlertController,private fcm: FCM,
   private loadingCtrl: LoadingController, private toastCtrl: ToastController, public menuCtrl: MenuController) {
     this.registerForm = formBuilder.group({
@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
       phone: ['', Validators.compose([Validators.required,Validators.min(1000000000), Validators.max(9999999999)])],
       // cnic: ['', Validators.compose([Validators.required, Validators.max(999999999999999)])],
       address: [''],
-      generalTerms: ['', Validators.requiredTrue]
+      generalTerms: ['', Validators.required]
     });
   }
 
@@ -43,13 +43,30 @@ export class RegisterPage implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.fcm.subscribeToTopic('ustad');
+    this.platform.ready().then(() => {
+      // Check the available platforms
+      console.log('Available platforms:', this.platform.platforms());
+      
+      // Check if a specific platform is available
+      if (this.platform.is('ios')) {
+        setTimeout(() => {
+          this.fcm.subscribeToTopic('ustad');
+    
+          this.fcm.getToken().then(token => {
+            this.user.device_token  = token;
+          }) 
+        }, 2000);      } else if (this.platform.is('android')) {
+        setTimeout(() => {
+          this.fcm.subscribeToTopic('ustad');
+    
+          this.fcm.getToken().then(token => {
+            this.user.device_token  = token;
+          }) 
+        }, 2000);      } else {
+        console.log('Running on another platform!');
+      }
+    });
 
-      this.fcm.getToken().then(token => {
-        this.user.device_token  = token;
-      }) 
-    }, 2000);
   }
 
 

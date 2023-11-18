@@ -29,11 +29,9 @@
           >
         </rating>
         -->
-      <rating [(ngModel)]="job.rating"
-        readonly="true" 
-        size="default" 
-        (ngModelChange)="onModelChange($event)">
-      </rating>
+    
+      <star-rating [starType]="'svg'" [rating]="job.rating"></star-rating>
+
         </div>
         <div *ngIf="(job.rating == null)"><br>
           <p ion-text color="dark" text-center>Not yet rated</p>

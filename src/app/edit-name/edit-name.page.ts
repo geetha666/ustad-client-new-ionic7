@@ -11,7 +11,7 @@ import { AccountService } from '../services/account.service';
 export class EditNamePage {
   loader:any;
 
-  user: User = new User;
+  user: any = {} as User;;
 
   constructor(params: NavParams, private modalCtrl: ModalController, private toastCtrl: ToastController
   ,private account_service: AccountService, private loadingCtrl: LoadingController) {

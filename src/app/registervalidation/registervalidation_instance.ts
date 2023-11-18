@@ -1,4 +1,4 @@
-export class ValidateReg {
+export interface ValidateReg {
   client_id:any;
   code:string;
 }

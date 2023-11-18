@@ -1,4 +1,4 @@
-export class InprogressJob {
+export interface InprogressJob {
   job_id:number;
   message_type:string;
   professional:string;

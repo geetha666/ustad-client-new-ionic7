@@ -12,10 +12,10 @@ import { JobService } from '../services/job.service';
 })
 export class RatingPage {
 
-  rating:Rating = new Rating;
+  rating:any = {} as Rating;
   job:any;
   loading: any;
-  ratingForm: FormGroup;
+  ratingForm:any= FormGroup;
 
   constructor(private rating_service: RatingService, public navCtrl: NavController
   ,private alertCtrl: AlertController, private loadingCtrl: LoadingController, public formBuilder: FormBuilder

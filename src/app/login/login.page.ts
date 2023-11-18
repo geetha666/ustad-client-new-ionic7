@@ -16,14 +16,14 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 })
 export class LoginPage implements OnInit {
 
-  user: User = new User;
-  authForm: FormGroup;
+  user: any = {} as User;
+  authForm:any= FormGroup;
   public hasError = false;
   bad_request:any;
   loader:any;
 
-  loguser: LogUser = new LogUser;
-  socialuser: SocialUser = new SocialUser;
+  loguser: any = {} as LogUser;
+  socialuser: any = {} as SocialUser;
 
   isLoggedIn = false;
 

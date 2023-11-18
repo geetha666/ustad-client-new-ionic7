@@ -25,7 +25,7 @@ export class JobDashboardPage implements OnInit {
 
   mySpecialLoader: any;
 
-  progressJob: InprogressJob[] = [];
+  progressJob:any={} as InprogressJob[];
   newJob:  ClientJob[] = [];
   assignJob:  ClientJob[] = [];
   ratingPending:  ClientJob[] = [];

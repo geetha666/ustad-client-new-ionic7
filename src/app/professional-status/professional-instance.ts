@@ -1,4 +1,4 @@
-export class Professional {
+export interface Professional {
   id:number;
   firstname:string;
   lastname:string;

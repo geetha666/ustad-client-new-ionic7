@@ -14,10 +14,10 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 })
 export class DialogChatPage {
   chats : IChat[] = [];
-  message! : string;
+  message : string='';
   sending! : boolean;
   msStrng!: string;
-  job: Job = new Job;
+  job: any = {} as Job;
 
   categoryMapping : { [key: string]: number } = {
     'electrician': 1,
@@ -53,7 +53,7 @@ export class DialogChatPage {
   }
 
   sendMessage() {
-    let sent_message: IChat = new IChat;
+    let sent_message: any = {} as IChat;
     sent_message.message = this.message;
     sent_message.type = 'human';
     this.chats.push(sent_message);
@@ -62,7 +62,7 @@ export class DialogChatPage {
     .then((response) => {
       this.message = '';
       this.sending = false;
-      let received_messages: IChat = new IChat;
+      let received_messages: any = {} as IChat;
       received_messages.message = response.result.fulfillment.speech;
       received_messages.type = 'machine';
       this.chats.push(received_messages);

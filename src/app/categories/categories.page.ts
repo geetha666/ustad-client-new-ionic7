@@ -15,11 +15,11 @@ import { SuccessModalPage } from '../success-modal/success-modal.page';
 })
 export class CategoriesPage implements OnInit {
 
-  categories:Category[] = [];
+  categories:any={} as Category[];
   loading:any;
   public hasError = false;
   public networkfail = false;
-  job: Job = new Job;
+  job: any = {} as Job;
   myDate: any;
   
   myloader: any;

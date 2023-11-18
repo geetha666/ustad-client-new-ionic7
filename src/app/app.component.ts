@@ -53,13 +53,12 @@ export class AppComponent {
   private popoverCtrl: PopoverController, private loadCtrl: LoadingController, private professional_service: ProfessionalService) {
 
 
-    this.userdata.userData$.subscribe((user:any) => {
-      // user and time are the same arguments passed in `events.publish(user, time)`
+  this.userdata.userData$.subscribe((user:any) => {
       console.log('Welcome', user);
       this.client_name = user.firstname;
       this.client_phone = user.phone;
       this.client_balance = user.balance;
-    });
+  });
     
     this.initializeApp();
 

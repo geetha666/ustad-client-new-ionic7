@@ -12,7 +12,7 @@ export class EditPhonePage {
 
   loader:any;
 
-  user: User = new User;
+  user: any = {} as User;;
   public prefixError = false;
 
   constructor(params: NavParams, private modalCtrl: ModalController, private toastCtrl: ToastController

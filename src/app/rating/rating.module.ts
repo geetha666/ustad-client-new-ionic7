@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { IonicRatingModule } from "ionic4-rating";
 
 import { IonicModule } from '@ionic/angular';
 
 import { RatingPage } from './rating.page';
+import { StarRatingModule } from 'angular-star-rating';
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    IonicRatingModule,
+    StarRatingModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   declarations: [RatingPage]

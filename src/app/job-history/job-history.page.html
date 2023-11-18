@@ -111,11 +111,13 @@
       >
       </rating>
       -->
-      <rating [(ngModel)]="job_status.rating"
+      <star-rating [starType]="'svg'"  readonly="true"  [rating]="job_status.rating"></star-rating>
+
+      <!-- <rating [(ngModel)]="job_status.rating"
       readonly="true" 
       size="default" 
       (ngModelChange)="onModelChange($event)">
-    </rating>
+    </rating> -->
     </div>
   </div>
   </div>

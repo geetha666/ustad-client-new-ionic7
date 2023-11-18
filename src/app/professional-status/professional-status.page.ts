@@ -28,7 +28,7 @@ export class ProfessionalStatusPage implements OnInit {
   professional_id:any;
   public grantedpermission:any;
 
-  professional:Professional = new Professional;
+  professional:any = {} as Professional;
 
   constructor(public navCtrl: NavController, private prof_service: ProfessionalService
   ,private geolocation: Geolocation, private diagnostic: Diagnostic, private alertCtrl: AlertController

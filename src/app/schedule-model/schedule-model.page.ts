@@ -12,10 +12,10 @@ import { JobDashboardPage } from '../job-dashboard/job-dashboard.page';
 })
 export class ScheduleModelPage {
   myDate:any;
-  job: Job = new Job;
+  job: any = {} as Job;
   loader:any;
   public later = false;
-
+  loadingSpin:any
   constructor(public navCtrl: NavController, public navParams: NavParams
   ,private toastCtrl: ToastController, private alertCtrl: AlertController, private job_service: JobService
   ,private loadingCtrl: LoadingController, private modalCtrl: ModalController) {

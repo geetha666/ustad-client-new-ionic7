@@ -13,8 +13,8 @@ export class AccountService {
   constructor(private app_service: AppService, private http: HttpClient) { }
 
   id: any;
-  user: User = new User;
-  validatereg: ValidateReg = new ValidateReg;
+  user: any = {} as User;;
+  validatereg: any = {} as ValidateReg;
 
   update_clientdata(user: User): Observable<User> {
     const headers = new HttpHeaders();

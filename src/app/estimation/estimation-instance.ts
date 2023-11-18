@@ -1,4 +1,4 @@
-export class Estimation {
+export interface Estimation {
   estimation_id:number;
   job_id:number;
   amount:number;

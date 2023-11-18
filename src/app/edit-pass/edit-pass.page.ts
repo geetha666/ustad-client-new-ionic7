@@ -11,10 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditPassPage {
 
-  passForm: FormGroup;
+  passForm:any= FormGroup;
   loader:any;
 
-  user: User = new User;
+  user: any = {} as User;;
 
   constructor(params: NavParams, private modalCtrl: ModalController, private toastCtrl: ToastController
   ,private account_service: AccountService, private loadingCtrl: LoadingController, private fb: FormBuilder) {

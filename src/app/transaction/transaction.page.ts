@@ -13,7 +13,7 @@ import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 export class TransactionPage {
   public hasError = false;
   public networkfail = false;
-  transactions: Transaction[] = [];
+  transactions:any={} as Transaction;
   loader:any;
   client_id:any;
 
@@ -30,14 +30,16 @@ export class TransactionPage {
     }
   }
 
-  getTransactions(client_id) {
+  getTransactions(client_id:any) {
     this.loader = true;
-    this.transaction_service.getTransaction(client_id).then(data => {
+    this.transaction_service.getTransaction(client_id).subscribe(data => {
       this.transactions = data;
       this.loader = false;
       console.log(data);
+    },(error)=>{
+      this.handleError(error)
     })
-    .catch(error => this.handleError(error));
+   
   }
 
 

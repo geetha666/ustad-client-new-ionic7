@@ -26,7 +26,7 @@ declare var google:any;
 })
 export class CreateJobPage implements OnInit {
 
-  job:Job = new Job;
+  job:any = {} as Job;
   category_data:any;
   jobForm:FormGroup;
   url!:any;
@@ -58,7 +58,6 @@ export class CreateJobPage implements OnInit {
   check_rec:any;
 
   public uploader: FileUploader = new FileUploader({url: this.url, disableMultipart: true });
-
   fileReader = new FileReader();
 
   fileTransfer: FileTransferObject = this.transfer.create();
@@ -67,8 +66,8 @@ export class CreateJobPage implements OnInit {
   public btnstatus = 'Press to Record';
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams
-  ,private job_service: JobService, private formbuilder: FormBuilder, private mediaCapture: MediaCapture
+  constructor(public navCtrl: NavController, public navParams: NavParams,private job_service: JobService, 
+   private formbuilder: FormBuilder, private mediaCapture: MediaCapture
   ,private file: File, private transfer: FileTransfer, private app_service: AppService
   ,private loadingCtrl: LoadingController, private alertCtrl: AlertController
   ,private event: UserDataService, private geolocation: Geolocation, private diagnostic: Diagnostic

@@ -9,7 +9,7 @@ import { Rating } from '../rating/rating-instance';
 })
 export class RatingService {
 
-  rating: Rating = new Rating;
+  rating: any = {} as Rating;
 
   constructor(private app_service: AppService, private http: HttpClient) { }
 

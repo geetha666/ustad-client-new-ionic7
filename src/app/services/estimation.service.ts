@@ -11,7 +11,7 @@ export class EstimationService {
 
   constructor(private http: HttpClient, private app_service: AppService) { }
 
-  estimation: Estimation = new Estimation;
+  estimation: any = {} as Estimation;
 
   getEstimationDetail(estimation_id:any): Observable<any> {
     const headers = new HttpHeaders();

@@ -43,7 +43,7 @@
 
       <ion-item no-padding >
         <ion-label position="stacked" style="font-size: 20px;">
-          <ion-icon name="lock" item-start></ion-icon>
+          <ion-icon item-start name="lock-closed"></ion-icon>
           Password
         </ion-label>
         <ion-input formControlName="password" type="password" [(ngModel)]="loguser.password" (keyup.enter)="login()"></ion-input>
@@ -78,7 +78,7 @@
          
           <ion-col size="6">
             <ion-button shape="round" style="--background:red" expand="full" (click)="googleLogin()">
-              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+              <ion-icon name="logo-google"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>

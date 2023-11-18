@@ -16,7 +16,7 @@ export class ProfessionalDetailPage {
   public hasError = false;
   loader:any;
 
-  professional: Professional = new Professional;
+  professional: any = {} as Professional;
 
   constructor(public navCtrl: NavController, private account_service: AccountService
   ,private loadingCtrl: LoadingController, private professional_service: ProfessionalService) {

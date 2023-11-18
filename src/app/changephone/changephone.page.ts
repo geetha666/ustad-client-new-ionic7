@@ -12,7 +12,7 @@ export class ChangephonePage {
 
   myloader:any;
 
-  phoneForm: FormGroup;
+  phoneForm:any= FormGroup;
   public prefixError = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, private toastCtrl: ToastController

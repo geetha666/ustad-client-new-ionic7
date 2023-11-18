@@ -1,4 +1,4 @@
-export class ClientJob {
+export interface ClientJob {
   job_id:number;
   title:string;
   status:string;
@@ -12,7 +12,7 @@ export class ClientJob {
   rating: any;
 }
 
-export class CancelledJobs {
+export interface CancelledJobs {
   job_id:number;
   assign_date:any;
   category:any;

@@ -24,8 +24,8 @@ export class JobService {
     this.jobapi = 'https://service.ustad.online';
   }
 
-  job: Job = new Job;
-  clientJob: ClientJob = new ClientJob;
+  job: any = {} as Job;
+  clientJob: any = {} as ClientJob;
 
   add_job(job: Job): Observable<Job> {
     const headers = new HttpHeaders();

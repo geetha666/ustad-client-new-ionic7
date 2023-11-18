@@ -23,6 +23,7 @@ log.txt
 /platforms
 /plugins
 /src1
+/android
 
 # Compiled output
 /dist

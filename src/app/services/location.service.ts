@@ -45,7 +45,7 @@ export class LocationService {
     }
   }
 
-  presentToast(msg) {
+  presentToast(msg:any) {
     let toast = this.toastCtrl.create({
       message: msg,
       duration: 3000

@@ -21,7 +21,7 @@ export class UnassignedJobPage {
   loading:any;
   public hasError = false;
   public networkfail = false;
-  confirm;
+  confirm:any;
   
   get_id() {
     this.client_id = localStorage.getItem("client_id");
@@ -31,7 +31,7 @@ export class UnassignedJobPage {
     }
   }
 
-  jobDetail(job) {
+  jobDetail(job:any) {
     let navigationExtras: NavigationExtras = {
       queryParams: {
         job: job,
@@ -46,32 +46,35 @@ export class UnassignedJobPage {
   async getJobs() {
     console.log("get unassigned jobs");
     await this.presentLoading();
-    this.job_service.get_unassignjobs(this.client_id).then(async response => {
+    this.job_service.get_unassignjobs(this.client_id).subscribe(async response => {
       console.log(response);
       console.log(response);
       this.clientJob = response;
       console.log(this.clientJob);
       await this.loading.dismiss();
+    },(err)=>{
+      this.handleError(err)
     })
-    .catch(error => this.handleError(error));
+   
   }
   
-  cancel_job(job) {
-    this.job_service.cancelJob(job.job_id).then(response => {
+  cancel_job(job:any) {
+    this.job_service.cancelJob(job.job_id).subscribe(response => {
       console.log(response);
       this.getJobs();  
+    },(err)=>{
+      this.handleError(err)
     })
-    .catch(error => this.handleError(error));
   }
   
-  viewEst(job) {
+  viewEst(job:any) {
     console.log(job);
     console.log(job.estimations);
     // this.navCtrl.push(EstimationPage, {job_id: job.job_id});
     // this.getEstimation(job_id);
   }
 
-  showConfirm(job) {
+  showConfirm(job:any) {
     console.log(job);
     this.confirm = this.alertCtrl.create({
       message: 'Delete Job?',

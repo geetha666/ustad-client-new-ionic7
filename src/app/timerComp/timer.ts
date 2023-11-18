@@ -8,8 +8,8 @@ import { ITimer } from './itimer';
 })
 export class TimerComponent implements OnInit {
 
-  @Input() timeInSeconds: number;
-  public timer: ITimer;
+  @Input() timeInSeconds!: number;
+  public timer!: ITimer;
 
   constructor() { }
 

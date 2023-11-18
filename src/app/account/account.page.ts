@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class AccountPage {
 
   client_id: any;
-  user: User = new User();
+  user: any = {} as User;
   public loader = false;
   public networkfail = false;
 

@@ -42,7 +42,7 @@ export class HomePage implements OnInit /* ,OnDestroy, AfterViewInit */ {
   public loc_available = false;
   public current_location = "Getting your Location...";
 
-  job:Job = new Job;
+  job:Job = {} as Job;
   map!: GoogleMap;
 
   marker_add:any;

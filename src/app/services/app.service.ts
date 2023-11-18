@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AppService {
 
-  user: User = new User;
+  user: any = {} as User;;
 
   public apiUrl = 'https://service.ustad.online/api';
 

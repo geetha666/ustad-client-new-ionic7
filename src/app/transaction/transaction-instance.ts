@@ -1,4 +1,4 @@
-export class Transaction {
+export interface Transaction {
   amount:number;
   payment_method:string;
   client_id:any;

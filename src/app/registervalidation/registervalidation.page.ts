@@ -23,8 +23,8 @@ declare var SMSReceive: any;
 
 
 export class RegistervalidationPage implements OnInit {
-  verificationForm: FormGroup;
-  valreg: ValidateReg = new ValidateReg;
+  verificationForm:any= FormGroup;
+  valreg: ValidateReg = {} as ValidateReg;
   loginresponse:any;
   loading:any;
 

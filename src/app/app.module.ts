@@ -27,12 +27,6 @@ import { Device } from '@ionic-native/device/ngx';
 import { FileUploadModule } from 'ng2-file-upload';
 // import { IonicImageViewerModule } from 'ionic-img-viewer';
 
-import { EditNamePage } from './edit-name/edit-name.page';
-import { EditPhonePage } from './edit-phone/edit-phone.page';
-import { EditPassPage } from './edit-pass/edit-pass.page';
-import { EditEmailPage } from './edit-email/edit-email.page';
-import { ChangephonePage } from './changephone/changephone.page';
-import { SuccessModalPage } from './success-modal/success-modal.page';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +43,7 @@ import { EstimationService } from './services/estimation.service';
 import { LocationService } from './services/location.service';
 import { TimerService } from './services/timer.service';
 import { UserDataService } from './services/userdataservice';
+import { InterceptorService } from './interceptor.service';
 
 @NgModule({
   declarations: [
@@ -102,6 +97,7 @@ import { UserDataService } from './services/userdataservice';
     Facebook,
     GooglePlus,
     UserDataService,
+    InterceptorService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

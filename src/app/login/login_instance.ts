@@ -1,4 +1,4 @@
-export class User {
+export interface User {
   id:number;
   username:string;
   password:string;
@@ -16,13 +16,13 @@ export class User {
 }
   
   
-export class LogUser {
+export interface LogUser {
   phone:number;
   password:string;
   device_token:string;
 }
 
-export class SocialUser {
+export interface SocialUser {
   social_id: number;
   user_name: string;
   email: string;

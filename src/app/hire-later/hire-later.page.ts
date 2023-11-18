@@ -15,7 +15,7 @@ export class HireLaterPage {
   public time: any;
   public trial: any;
   client_id:any;
-  user:User = new User;
+  user:any = {} as User;
   public disable = true;
   loading:any;
   

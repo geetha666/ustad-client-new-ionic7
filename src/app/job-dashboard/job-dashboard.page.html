@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="!loading && !nojob && !networkfail">
+  <div *ngIf="!loading  && !networkfail">
     <h5 text-center>Your currently active Jobs</h5>
     <ion-card *ngFor="let job of progressJob.slice().reverse()" class="card round" (click)="jobview(job)">
       <ion-card-header style="font-size: 20px;color: blue;" class="bold">

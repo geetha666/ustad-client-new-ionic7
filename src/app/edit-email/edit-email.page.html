@@ -20,7 +20,7 @@
     <ion-input type="text" [(ngModel)]="user.email" email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required [ngModelOptions]="{standalone: true}" required #email="ngModel"></ion-input>
   </ion-item>
   <div class="md-errors-spacer" [hidden]="email.valid || email.untouched" class="alert alert-danger">
-    <div style="color:red"  *ngIf="email.errors && email.errors.pattern">
+    <div style="color:red"  *ngIf="email.errors && email.errors['pattern']">
       Email is invalid
     </div>
   </div>

@@ -45,7 +45,7 @@ export class AuthGuardService implements CanActivate {
     const url = `${this.apiUrl}/users`;
     const body = JSON.stringify(user);
 
-    return this.http.post<number>(url, body, options);
+    return this.http.post<number>(url, user, options);
   }
 
   login(loguser: LogUser): Observable<User> {
@@ -54,9 +54,9 @@ export class AuthGuardService implements CanActivate {
 
     const options = { headers: headers };
     const url = `${this.apiUrl}/authenticate`;
-    const body = JSON.stringify(loguser);
+   // const body = JSON.stringify(loguser);
 
-    return this.http.post<User>(url, body, options);
+    return this.http.post<User>(url, loguser, options);
   }
 
   social_login(user:any): Observable<any> {
@@ -67,7 +67,7 @@ export class AuthGuardService implements CanActivate {
     const url = `${this.apiUrl}/social`;
     const body = JSON.stringify(user);
 
-    return this.http.post<any>(url, body, options);
+    return this.http.post<any>(url, user, options);
   }
 
   send_token(deviceclass: DeviceClass): Observable<any> {

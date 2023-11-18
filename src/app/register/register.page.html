@@ -28,7 +28,7 @@
 
       <ion-item no-padding >
         <ion-label position="stacked" style="font-size:20px">
-          <ion-icon name="lock" item-start></ion-icon>
+          <ion-icon name="lock-closed" item-start></ion-icon>
           Password
         </ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
@@ -83,8 +83,9 @@
 
       <br>
       <ion-item>
-        <ion-checkbox slot="start" formControlName="generalTerms" checked="false"></ion-checkbox>
-        <ion-label class="terms" tappable >Agree to the Terms and conditions</ion-label>
+        <ion-checkbox labelPlacement="end" formControlName="generalTerms" >Agree to the Terms and conditions</ion-checkbox>
+
+        
       </ion-item>
       <br>
       <a href='#' onclick="return false" (click)="terms_conditions()" >view terms and conditions</a>

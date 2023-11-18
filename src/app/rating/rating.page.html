@@ -41,11 +41,9 @@
       </rating>
       -->
 
-      <rating formControlName="rating"
-        readonly="false" 
-        size="default" >
-      </rating>
-    
+     
+      <star-rating   readonly="false"   formControlName="rating" [starType]="'svg'"></star-rating>
+
     </ion-item>
     <ion-item>
       <ion-label position="floating" style="font-size: 20px;">Description</ion-label>
